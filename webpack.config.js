@@ -35,11 +35,11 @@ module.exports = {
       filename: "bundle.css",
     }),
     new CopyPlugin({
-        patterns: [
-            { from: "src/images/interfaces/", to: "images/interfaces" },
-            { from: "src/images/letters/", to: "images/letters" },
-            { from: "src/images/numbers/", to: "images/numbers" },
-        ]
+      patterns: [
+        { from: "src/images/interfaces/", to: "images/interfaces" },
+        { from: "src/images/letters/", to: "images/letters" },
+        { from: "src/images/numbers/", to: "images/numbers" },
+      ],
     }),
   ],
 

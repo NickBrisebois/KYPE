@@ -104,6 +104,19 @@ export class TranslatorApp {
     this.drawImages();
   }
 
+  public handleBackspace() {
+    this.clearCanvas();
+    this.drawnCharacters.pop();
+    this.drawImages();
+  }
+
+  public getCanvasAsImage(): string {
+    const image = this.canvas
+      .toDataURL("image/png")
+      .replace("image/png", "image/octet-stream");
+    return image;
+  }
+
   public reset() {
     this.drawnCharacters = [];
     this.clearCanvas();

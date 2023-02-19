@@ -17,8 +17,8 @@
                 },
                 {
                     "char": "h",
-                    "y_offset": 20,
-                    "x_offset": 10
+                    "y_offset": 28,
+                    "x_offset": 0
                 },
                 {
                     "char": "t",
@@ -39,11 +39,23 @@
             "offsets": [
                 {
                     "char": "l",
-                    "y_offset": 20
+                    "y_offset": 20,
+                    "x_offset": 0
                 },
                 {
                     "char": "e",
-                    "y_offset": 10
+                    "y_offset": 10,
+                    "x_offset": 0
+                },
+                {
+                    "char": "h",
+                    "y_offset": 20,
+                    "x_offset": 0
+                },
+                {
+                    "char": "p",
+                    "y_offset": 39,
+                    "x_offset": 0
                 }
             ]
         },
@@ -82,7 +94,7 @@
             "offsets": [
                 {
                     "char": "e",
-                    "y_offset": 39,
+                    "y_offset": 23,
                     "x_offset": 0
                 },
                 {
@@ -94,7 +106,13 @@
                     "char": "p",
                     "y_offset": 39,
                     "x_offset": 0
+                },
+                {
+                    "char": "h",
+                    "y_offset": 39,
+                    "x_offset": 0
                 }
+
             ]
         },
         {
@@ -122,6 +140,16 @@
                 {
                     "char": "l",
                     "y_offset": 39,
+                    "x_offset": 0
+                },
+                {
+                    "char": "p",
+                    "y_offset": 35,
+                    "x_offset": 0
+                },
+                {
+                    "char": "h",
+                    "y_offset": 40,
                     "x_offset": 0
                 }
             ]
@@ -171,8 +199,13 @@
                 },
                 {
                     "char": "w",
-                    "y_offset": 20,
-                    "x_offset": 10
+                    "y_offset": 12,
+                    "x_offset": 0
+                },
+                {
+                    "char": "e",
+                    "y_offset": 35,
+                    "x_offset": 0
                 }
             ]
         },
@@ -189,6 +222,23 @@
                 {
                     "char": "e",
                     "y_offset": 22,
+                    "x_offset": 0
+                },
+                {
+                    "char": "z",
+                    "y_offset": 38,
+                    "x_offset": 0
+                }
+            ]
+        },
+        {
+            "char": "y",
+            "name": "Precursor_Y",
+            "src_path": "./images/letters/Precursor_Y.png",
+            "offsets": [
+                {
+                    "char": "y",
+                    "y_offset": 30,
                     "x_offset": 0
                 }
             ]

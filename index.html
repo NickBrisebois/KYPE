@@ -6,12 +6,40 @@
 </head>
 
 <body>
-    <div id="translator-box">
-        <canvas id="translator-canvas" width="490" height="490" style="border: 1px solid black;"></canvas>
-        <textarea id="translator-input" rows="30" cols="40"></textarea>
-        <div id="button-area">
-            <button id="reset">Reset Translator</button>
-            <button id="export">Export as Image</button>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">KYPE Translator</a>
+
+            <div class="form-inline">
+                <button id="reset" class="btn btn-danger ">Reset Translator</button>
+                <button id="export" class="btn btn-primary">Export as Image</button>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div id="translator-box">
+            <div class="row">
+                <div class="col">
+                    <div class="card bg-light mb-3">
+                        <div class="card-header">
+                            Translation Input
+                        </div>
+                        <div class="card-body">
+                            <textarea id="translator-input" class="form-control" rows="29" cols="40"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            Translation Output
+                        </div>
+                        <div class="card-body">
+                            <canvas id="translator-canvas" width="500" height="705"></canvas>
+                            </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

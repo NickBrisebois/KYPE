@@ -2,6 +2,7 @@ import { TranslatorApp } from "./kype.translator";
 import { ImageCache, CharacterMap } from "./interfaces";
 
 // Resources
+import "bootstrap/dist/css/bootstrap.min.css";
 import character_mapping from "./character_mapping.json";
 import "./css/style.css";
 
@@ -22,11 +23,19 @@ function main() {
   );
   translate_input_element.addEventListener(
     "keyup",
-    () => {
+    (event) => {
       let chars = translate_input_element.value.split("");
+      let pressed_key = event.key;
+
+      // If backspace is hit, we pop the last drawn image off the list of drawn images
+      if (event.code === "Backspace") {
+        translator_app.handleBackspace();
+        previous_translation_input = chars;
+        return;
+      }
 
       // only allow supported chars
-      if (!supported_characters.includes(chars[chars.length - 1])) {
+      if (!supported_characters.includes(pressed_key)) {
         console.log(chars);
         translate_input_element.value = previous_translation_input.join("");
         return;
@@ -39,7 +48,7 @@ function main() {
   );
   translate_input_element.focus();
 
-  /* RESET BUTTON HANDLERS */
+  /* RESET BUTTON HANDLERS - handles resetting the canvas and input box */
   let reset_button: HTMLButtonElement = <HTMLButtonElement>(
     document.getElementById("reset")
   );
@@ -47,6 +56,20 @@ function main() {
     translator_app.reset();
     previous_translation_input = [];
     translate_input_element.value = "";
+  });
+
+  /* EXPORT BUTTON - handles exporting the contents of the canvas to a png */
+  let export_button: HTMLButtonElement = <HTMLButtonElement>(
+    document.getElementById("export")
+  );
+  export_button.addEventListener("click", () => {
+    let image_string = translator_app.getCanvasAsImage();
+    let hiddenLink = document.createElement("a");
+    hiddenLink.href = image_string;
+    hiddenLink.download = "kype_translation.png";
+    document.body.appendChild(hiddenLink);
+    hiddenLink.click();
+    hiddenLink.remove();
   });
 }
 
