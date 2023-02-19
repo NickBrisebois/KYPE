@@ -1,0 +1,14 @@
+
+#translator-box {
+    display: flex;
+    column-gap: 5px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: 20%;
+}
+
+#button-area button {
+    padding: 3px;
+    margin: 5px 5px 5px 0px;
+}

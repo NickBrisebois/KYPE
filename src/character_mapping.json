@@ -1,0 +1,203 @@
+{
+    "letters": [
+        {
+            "char": "e",
+            "name": "Precursor_E",
+            "src_path": "./images/letters/Precursor_E.png",
+            "offsets": [
+                {
+                    "char": "l",
+                    "y_offset": 20,
+                    "x_offset": 30
+                },
+                {
+                    "char": "e",
+                    "y_offset": 15,
+                    "x_offset": 0
+                },
+                {
+                    "char": "h",
+                    "y_offset": 20,
+                    "x_offset": 10
+                },
+                {
+                    "char": "t",
+                    "y_offset": 20,
+                    "x_offset": 0
+                },
+                {
+                    "char": "n",
+                    "y_offset": 40,
+                    "x_offset": 0
+                }
+            ]
+        },
+        {
+            "char": "h",
+            "name": "Precursor_H",
+            "src_path": "./images/letters/Precursor_H.png",
+            "offsets": [
+                {
+                    "char": "l",
+                    "y_offset": 20
+                },
+                {
+                    "char": "e",
+                    "y_offset": 10
+                }
+            ]
+        },
+        {
+            "char": "j",
+            "name": "Precursor_J",
+            "src_path": "./images/letters/Precursor_J.png",
+            "offsets": [
+                {
+                    "char": "l",
+                    "y_offset": 20
+                }
+            ]
+        },
+        {
+            "char": "k",
+            "name": "Precursor_K",
+            "src_path": "./images/letters/Precursor_K.png",
+            "offsets": [
+                {
+                    "char": "l",
+                    "y_offset": 20,
+                    "x_offset": 0
+                },
+                {
+                    "char": "e",
+                    "y_offset": 26,
+                    "x_offset": -8
+                }
+            ]
+        },
+        {
+            "char": "l",
+            "name": "Precursor_L",
+            "src_path": "./images/letters/Precursor_L.png",
+            "offsets": [
+                {
+                    "char": "e",
+                    "y_offset": 39,
+                    "x_offset": 0
+                },
+                {
+                    "char": "l",
+                    "y_offset": 39,
+                    "x_offset": 0
+                },
+                {
+                    "char": "p",
+                    "y_offset": 39,
+                    "x_offset": 0
+                }
+            ]
+        },
+        {
+            "char": "n",
+            "name": "Precursor_N",
+            "src_path": "./images/letters/Precursor_N.png",
+            "offsets": [
+                {
+                    "char": "l",
+                    "y_offset": 20,
+                    "x_offset": 0
+                },
+                {
+                    "char": "e",
+                    "y_offset": 50,
+                    "x_offset": 0
+                }
+            ]
+        },
+        {
+            "char": "p",
+            "name": "Precursor_P",
+            "src_path": "./images/letters/Precursor_P.png",
+            "offsets": [
+                {
+                    "char": "l",
+                    "y_offset": 39,
+                    "x_offset": 0
+                }
+            ]
+        },
+        {
+            "char": "t",
+            "name": "Precursor_T",
+            "src_path": "./images/letters/Precursor_T.png",
+            "offsets": [
+                {
+                    "char": "t",
+                    "y_offset": 20,
+                    "x_offset": 0
+                },
+                {
+                    "char": "z",
+                    "y_offset": -5,
+                    "x_offset": 0
+                },
+                {
+                    "char": "e",
+                    "y_offset": 18,
+                    "x_offset": 0
+                }
+            ]
+        },
+        {
+            "char": "v",
+            "name": "Precursor_V",
+            "src_path": "./images/letters/Precursor_V.png",
+            "offsets": [
+                {
+                    "char": "l",
+                    "y_offset": 20
+                }
+            ]
+        },
+        {
+            "char": "w",
+            "name": "Precursor_W",
+            "src_path": "./images/letters/Precursor_W.png",
+            "offsets": [
+                {
+                    "char": "l",
+                    "y_offset": 10,
+                    "x_offset": 10
+                },
+                {
+                    "char": "w",
+                    "y_offset": 20,
+                    "x_offset": 10
+                }
+            ]
+        },
+        {
+            "char": "z",
+            "name": "Precursor_Z",
+            "src_path": "./images/letters/Precursor_Z.png",
+            "offsets": [
+                {
+                    "char": "l",
+                    "y_offset": 10,
+                    "x_offset": 50
+                },
+                {
+                    "char": "e",
+                    "y_offset": 22,
+                    "x_offset": 0
+                }
+            ]
+        },
+        {
+            "char": " ",
+            "name": "space",
+            "src_path": "",
+            "offsets": []
+        }
+    ]
+}
