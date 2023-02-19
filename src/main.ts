@@ -12,7 +12,7 @@ function main() {
   let letter_mappings = character_mapping.letters.map((m) => m as CharacterMap);
   character_mapping_list = character_mapping_list.concat(letter_mappings);
 
-  let translator_app = new TranslatorApp(character_mapping_list);
+  let translator_app = new TranslatorApp(character_mapping_list, true);
 
   /* TEXT AREA HANDLERS */
   let supported_characters = character_mapping.letters.map((m) => m.char);

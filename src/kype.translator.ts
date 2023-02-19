@@ -2,6 +2,8 @@ import path from "node:path";
 import { ImageCache, CharacterMap, DrawnChar } from "./interfaces";
 
 const IMG_DOWNSCALE_FACTOR = 4;
+const GUIDELINE_ONE_X = 21;
+const GUIDELINE_TWO_X = 70;
 
 export class TranslatorApp {
   private canvas: HTMLCanvasElement;
@@ -10,18 +12,24 @@ export class TranslatorApp {
   private imageMap: ImageCache[];
 
   private drawnCharacters: DrawnChar[] = [];
+  private useGuidelines: boolean = false;
 
-  constructor(character_mapping: CharacterMap[]) {
+  constructor(
+    characterMapping: CharacterMap[],
+    useGuidelines: boolean = false
+  ) {
     this.canvas = document.getElementById(
       "translator-canvas"
     ) as HTMLCanvasElement;
     this.context = this.canvas.getContext("2d");
-    this.imageMap = this.createImageCache(character_mapping);
+    this.imageMap = this.createImageCache(characterMapping);
+    this.useGuidelines = useGuidelines;
+    if (this.useGuidelines) this.drawGuidelines();
   }
 
-  private createImageCache(character_mapping: CharacterMap[]): ImageCache[] {
+  private createImageCache(characterMapping: CharacterMap[]): ImageCache[] {
     let image_caches = [];
-    for (let mapping of character_mapping) {
+    for (let mapping of characterMapping) {
       let img = new Image();
       img.src = mapping.src_path;
       image_caches.push({
@@ -41,24 +49,28 @@ export class TranslatorApp {
       return;
     }
 
-    let previous_drawn_char: DrawnChar | null = null;
+    let previousDrawnChar: DrawnChar | null = null;
     if (this.drawnCharacters.length > 0) {
-      previous_drawn_char =
-        this.drawnCharacters[this.drawnCharacters.length - 1];
+      previousDrawnChar = this.drawnCharacters[this.drawnCharacters.length - 1];
     }
-    console.log(`Previous Char Y Axis: ${previous_drawn_char?.y_axis}`);
+    console.log(`Previous Char Y Axis: ${previousDrawnChar?.y_axis}`);
 
     // apply character offsets
-    let y_axis = previous_drawn_char?.y_axis | 0;
+    let y_axis = previousDrawnChar?.y_axis | 0;
     let x_axis = 0;
 
-    if (previous_drawn_char?.y_axis != null && char != " ") {
+    const self_offset = cached_image.offsets.find((o) => o.char == char);
+    if (self_offset) {
+      (y_axis += self_offset.y_offset), (x_axis += self_offset.x_offset);
+    }
+
+    if (previousDrawnChar?.y_axis != null && char != " ") {
       let offset = cached_image.offsets.find(
-        (o) => o.char == previous_drawn_char.char
+        (o) => o.char == previousDrawnChar.char
       );
       if (offset) {
         y_axis += offset.y_offset;
-        x_axis = offset.x_offset | 0;
+        x_axis += offset.x_offset;
       }
     } else {
       // Handle spaces
@@ -102,12 +114,30 @@ export class TranslatorApp {
 
     console.log(this.drawnCharacters);
     this.drawImages();
+    this.drawGuidelines();
+  }
+
+  public drawGuidelines() {
+    if (this.useGuidelines) {
+      this.context.beginPath();
+      this.context.setLineDash([1, 3]);
+      this.context.moveTo(GUIDELINE_ONE_X, 0);
+      this.context.lineTo(GUIDELINE_ONE_X, this.canvas.height);
+      this.context.stroke();
+
+      this.context.beginPath();
+      this.context.setLineDash([1, 3]);
+      this.context.moveTo(GUIDELINE_TWO_X, 0);
+      this.context.lineTo(GUIDELINE_TWO_X, this.canvas.height);
+      this.context.stroke();
+    }
   }
 
   public handleBackspace() {
     this.clearCanvas();
     this.drawnCharacters.pop();
     this.drawImages();
+    this.drawGuidelines();
   }
 
   public getCanvasAsImage(): string {
@@ -120,5 +150,7 @@ export class TranslatorApp {
   public reset() {
     this.drawnCharacters = [];
     this.clearCanvas();
+
+    this.drawGuidelines();
   }
 }

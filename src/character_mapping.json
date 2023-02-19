@@ -18,7 +18,7 @@
                 {
                     "char": "h",
                     "y_offset": 28,
-                    "x_offset": 0
+                    "x_offset": 9
                 },
                 {
                     "char": "t",
@@ -39,8 +39,8 @@
             "offsets": [
                 {
                     "char": "l",
-                    "y_offset": 20,
-                    "x_offset": 0
+                    "y_offset": 25,
+                    "x_offset": -9
                 },
                 {
                     "char": "e",
@@ -94,8 +94,8 @@
             "offsets": [
                 {
                     "char": "e",
-                    "y_offset": 23,
-                    "x_offset": 0
+                    "y_offset": 39,
+                    "x_offset": -1
                 },
                 {
                     "char": "l",
@@ -111,6 +111,11 @@
                     "char": "h",
                     "y_offset": 39,
                     "x_offset": 0
+                },
+                {
+                    "char": "n",
+                    "y_offset": 39,
+                    "x_offset": 40
                 }
 
             ]
@@ -121,6 +126,11 @@
             "src_path": "./images/letters/Precursor_N.png",
             "offsets": [
                 {
+                    "char": "n",
+                    "y_offset": 20,
+                    "x_offset": 20
+                },
+                {
                     "char": "l",
                     "y_offset": 20,
                     "x_offset": 0
@@ -128,6 +138,11 @@
                 {
                     "char": "e",
                     "y_offset": 50,
+                    "x_offset": 0
+                },
+                {
+                    "char": "w",
+                    "y_offset": 17,
                     "x_offset": 0
                 }
             ]
@@ -206,6 +221,11 @@
                     "char": "e",
                     "y_offset": 35,
                     "x_offset": 0
+                },
+                {
+                    "char": "z",
+                    "y_offset": 33,
+                    "x_offset": 0
                 }
             ]
         },
@@ -228,6 +248,11 @@
                     "char": "z",
                     "y_offset": 38,
                     "x_offset": 0
+                },
+                {
+                    "char": "y",
+                    "y_offset": 50,
+                    "x_offset": 48
                 }
             ]
         },
