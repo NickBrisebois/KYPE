@@ -1,47 +1,82 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>KYPE Translator</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">KYPE Translator</a>
+      <div class="container">
+        <a class="navbar-brand" href="#">KYPE Translator</a>
 
-            <div class="form-inline">
-                <button id="reset" class="btn btn-danger ">Reset Translator</button>
-                <button id="export" class="btn btn-primary">Export as Image</button>
-            </div>
+        <div class="form-inline">
+          <div
+            class="btn-group btn-group-toggle"
+            id="guideline-toggles"
+            role="group"
+            aria-label="section preference"
+            style="margin-right: 5px"
+          >
+            <input
+              type="radio"
+              class="btn-check"
+              name="guideline-toggles"
+              id="option1"
+              value="on"
+              autocomplete="off"
+              checked
+            />
+            <label class="btn btn-secondary" for="option1">
+              Guidelines On
+            </label>
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="guideline-toggles"
+              id="option2"
+              value="off"
+              autocomplete="off"
+            />
+            <label class="btn btn-secondary" for="option2">
+              Guidelines Off
+            </label>
+          </div>
+          <button id="reset" class="btn btn-danger">Reset Translator</button>
+          <button id="export" class="btn btn-primary">Export as Image</button>
         </div>
+      </div>
     </nav>
     <div class="container mt-5">
-        <div id="translator-box">
-            <div class="row">
-                <div class="col">
-                    <div class="card bg-light mb-3">
-                        <div class="card-header">
-                            Translation Input
-                        </div>
-                        <div class="card-body">
-                            <textarea id="translator-input" class="form-control" rows="29" cols="40"></textarea>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <div class="card-header">
-                            Translation Output
-                        </div>
-                        <div class="card-body">
-                            <canvas id="translator-canvas" width="500" height="705"></canvas>
-                            </div>
-                    </div>
-                </div>
+      <div id="translator-box">
+        <div class="row">
+          <div class="col">
+            <div class="card bg-light mb-3">
+              <div class="card-header">Translation Input</div>
+              <div class="card-body">
+                <textarea
+                  id="translator-input"
+                  class="form-control"
+                  rows="29"
+                  cols="40"
+                ></textarea>
+              </div>
             </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <div class="card-header">Translation Output</div>
+              <div class="card-body">
+                <canvas
+                  id="translator-canvas"
+                  width="500"
+                  height="705"
+                ></canvas>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

@@ -4,6 +4,10 @@
     background-color: #FFF;
 }
 
+.guideline-toggles {
+    margin-right: 10px;
+}
+
 #export {
     margin-left: 5px;
 }

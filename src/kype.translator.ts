@@ -4,6 +4,7 @@ import { ImageCache, CharacterMap, DrawnChar } from "./interfaces";
 const IMG_DOWNSCALE_FACTOR = 4;
 const GUIDELINE_ONE_X = 21;
 const GUIDELINE_TWO_X = 70;
+const SPACE_CHAR_HEIGHT = 50;
 
 export class TranslatorApp {
   private canvas: HTMLCanvasElement;
@@ -59,9 +60,13 @@ export class TranslatorApp {
     let y_axis = previousDrawnChar?.y_axis | 0;
     let x_axis = 0;
 
-    const self_offset = cached_image.offsets.find((o) => o.char == char);
-    if (self_offset) {
-      (y_axis += self_offset.y_offset), (x_axis += self_offset.x_offset);
+    // we apply a corrective self offset if this is the first char
+    if (this.drawnCharacters.length == 0) {
+      console.log("Applying self offset");
+      const self_offset = cached_image.offsets.find((o) => o.char == "default");
+      if (self_offset) {
+        (y_axis += self_offset.y_offset), (x_axis += self_offset.x_offset);
+      }
     }
 
     if (previousDrawnChar?.y_axis != null && char != " ") {
@@ -72,10 +77,10 @@ export class TranslatorApp {
         y_axis += offset.y_offset;
         x_axis += offset.x_offset;
       }
-    } else {
+    } else if (this.drawnCharacters.length > 0) {
       // Handle spaces
-      y_axis += 50;
-      x_axis = 0;
+      y_axis += SPACE_CHAR_HEIGHT;
+      x_axis += 0;
     }
 
     console.log(`y-axis: ${y_axis}`);
@@ -119,14 +124,19 @@ export class TranslatorApp {
 
   public drawGuidelines() {
     if (this.useGuidelines) {
+      const lineDashWidth = 3;
+      const lineWidth = 1;
+
+      // left guideline
       this.context.beginPath();
-      this.context.setLineDash([1, 3]);
+      this.context.setLineDash([lineWidth, lineDashWidth]);
       this.context.moveTo(GUIDELINE_ONE_X, 0);
       this.context.lineTo(GUIDELINE_ONE_X, this.canvas.height);
       this.context.stroke();
 
+      // right guideline
       this.context.beginPath();
-      this.context.setLineDash([1, 3]);
+      this.context.setLineDash([lineWidth, lineDashWidth]);
       this.context.moveTo(GUIDELINE_TWO_X, 0);
       this.context.lineTo(GUIDELINE_TWO_X, this.canvas.height);
       this.context.stroke();
@@ -145,6 +155,19 @@ export class TranslatorApp {
       .toDataURL("image/png")
       .replace("image/png", "image/octet-stream");
     return image;
+  }
+
+  public enableGuidelines() {
+    this.useGuidelines = true;
+    this.clearCanvas();
+    this.drawGuidelines();
+    this.drawImages();
+  }
+
+  public disableGuidelines() {
+    this.useGuidelines = false;
+    this.clearCanvas();
+    this.drawImages();
   }
 
   public reset() {

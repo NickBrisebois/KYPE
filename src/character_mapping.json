@@ -6,14 +6,14 @@
             "src_path": "./images/letters/Precursor_E.png",
             "offsets": [
                 {
+                    "char": "default",
+                    "y_offset": 30,
+                    "x_offset": 9
+                },
+                {
                     "char": "l",
                     "y_offset": 20,
                     "x_offset": 30
-                },
-                {
-                    "char": "e",
-                    "y_offset": 15,
-                    "x_offset": 0
                 },
                 {
                     "char": "h",
@@ -29,6 +29,11 @@
                     "char": "n",
                     "y_offset": 40,
                     "x_offset": 0
+                },
+                {
+                    "char": "e",
+                    "y_offset": 30,
+                    "x_offset": 9
                 }
             ]
         },
@@ -45,11 +50,6 @@
                 {
                     "char": "e",
                     "y_offset": 10,
-                    "x_offset": 0
-                },
-                {
-                    "char": "h",
-                    "y_offset": 20,
                     "x_offset": 0
                 },
                 {
@@ -75,11 +75,6 @@
             "name": "Precursor_K",
             "src_path": "./images/letters/Precursor_K.png",
             "offsets": [
-                {
-                    "char": "l",
-                    "y_offset": 20,
-                    "x_offset": 0
-                },
                 {
                     "char": "e",
                     "y_offset": 26,

@@ -71,6 +71,26 @@ function main() {
     hiddenLink.click();
     hiddenLink.remove();
   });
+
+  /* GUIDELINES TOGGLE BUTTON - enables or disables guidelines */
+
+  let guideline_options_el = document.getElementById("guideline-toggles");
+  guideline_options_el.addEventListener("click", () => {
+    let guideline_toggles = Array.from(
+      document.getElementsByName("guideline-toggles")
+    );
+    const active_toggle: HTMLInputElement = guideline_toggles.find(
+      (t: HTMLInputElement) => t.checked == true
+    ) as any;
+    const active_toggle_val = active_toggle.value;
+    console.log(active_toggle_val);
+    if (active_toggle_val == "on") {
+      translator_app.enableGuidelines();
+    } else {
+      translator_app.disableGuidelines();
+    }
+    console.log(active_toggle);
+  });
 }
 
 main();
